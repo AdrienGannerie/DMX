@@ -4,31 +4,29 @@ Example project that use DMX and ArtNet and demonstrate how to use it on Unity.
 
 ## Components
 
-ToDo
-
 ### DMX Universe
 
-ToDo
+A Component which represents a DMX universe and contains some DMX devices and can have a DMX input and a DMX output.
 
 ### DMX Device
 
-ToDo
+A Component which represents a DMX device. All your custom DMX device need to inherit from this component.
 
 ### DMX Input
 
-ToDo
+A Component which receive DMX data.
 
 ### DMX Output
 
-ToDo
+A Component which send DMX data.
 
 ## Authors
 
-* **Adrien Gannerie** - *DMX on Unity* - [AdrienGannerie](https://github.com/AdrienGannerie)
+* **Adrien Gannerie** - [AdrienGannerie](https://github.com/AdrienGannerie)
 
 ## External Libraries
 
-* **MikeCodesDotNET** - *ArtNet.Net* - [ArtNet.Net](https://github.com/MikeCodesDotNET/ArtNet.Net)
+* **ArtNet.Net** - [ArtNet.Net](https://github.com/MikeCodesDotNET/ArtNet.Net)
 
 ## License
 
