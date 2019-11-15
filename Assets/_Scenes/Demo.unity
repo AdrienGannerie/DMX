@@ -197,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51318598}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 2, z: -3}
+  m_LocalPosition: {x: 0, y: 3, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1121124491}
   - component: {fileID: 1121124489}
-  - component: {fileID: 1121124492}
+  - component: {fileID: 1121124490}
   m_Layer: 0
   m_Name: Right Light
   m_TagString: Untagged
@@ -340,7 +340,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 0
-  m_Color: {r: 0, g: 0, b: 0.99609375, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.99609375, a: 88.16211}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 120
@@ -390,6 +390,24 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1121124490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121124488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e1e58db10b0fa49bd6a59357ab25e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Address: 6
+  m_Light: {fileID: 1121124489}
+  m_Red: 0
+  m_Green: 0
+  m_Blue: 255
+  m_White: 0
 --- !u!4 &1121124491
 Transform:
   m_ObjectHideFlags: 0
@@ -404,23 +422,6 @@ Transform:
   m_Father: {fileID: 1986512189}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1121124492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121124488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3bdaacd010d1b741970b152ce96c318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Address: 6
-  m_Light: {fileID: 1121124489}
-  m_Red: 0
-  m_Green: 0
-  m_Blue: 255
 --- !u!1 &1176853440
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,11 +673,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Universe: 0
   m_Input: {fileID: 1986512192}
-  m_Output: {fileID: 0}
+  m_Output: {fileID: 1986512191}
   m_Devices:
   - {fileID: 764157742}
   - {fileID: 1176853444}
-  - {fileID: 1121124492}
+  - {fileID: 1121124490}
 --- !u!114 &1986512191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,8 +691,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ArtNetUniverse: 0
-  m_LocalIP: 192.168.0.14
-  m_RemoteIP: 192.168.0.10
+  m_LocalIP: 192.168.0.10
+  m_RemoteIP: 192.168.0.14
 --- !u!114 &1986512192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,4 +706,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ArtNetUniverse: 0
-  m_LocalIP: 127.0.0.1
+  m_LocalIP: 192.168.0.10
