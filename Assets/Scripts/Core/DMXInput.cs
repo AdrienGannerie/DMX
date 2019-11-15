@@ -1,69 +1,27 @@
-﻿using ArtNet.Packets;
-using ArtNet.Sockets;
-using System.Net;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DMXInput : MonoBehaviour
+namespace DMX
 {
-    #region Properties
-    [SerializeField] short m_ArtNetUniverse;
-    public short ArtNetUniverse
+    public abstract class DMXInput : MonoBehaviour
     {
-        get
-        {
-            return m_ArtNetUniverse;
-        }
-        set
-        {
-            m_ArtNetUniverse = value;
-        }
-    }
+        #region Properties
+        protected byte[] m_DMXData;
+        #endregion
 
-    [SerializeField] string m_LocalIP = "127.0.0.1";
-    public string LocalIP
-    {
-        get
+        #region Public Methods
+        public virtual bool TryGetDMXData(out byte[] dmxData)
         {
-            return m_LocalIP;
+            dmxData = m_DMXData;
+            m_DMXData = null;
+            return dmxData != null && dmxData.Length == 512;
         }
-        set
+        #endregion
+
+        #region Private Methods
+        protected virtual void OnDisable()
         {
-            m_LocalIP = value;
+            m_DMXData = null;
         }
+        #endregion
     }
-
-    ArtNetSocket m_Listener;
-    byte[] m_DMXData;
-    #endregion
-
-    #region Public Methods
-    public bool TryGetDMXData(out byte[] dmxData)
-    {
-        dmxData = m_DMXData;
-        m_DMXData = null;
-        return dmxData != null && dmxData.Length == 512;
-    }
-    #endregion
-
-    #region Private Methods
-    void OnEnable()
-    {
-        m_Listener = new ArtNetSocket();
-        m_Listener.Open(IPAddress.Parse(LocalIP), null);
-        m_Listener.NewPacket += OnInput;
-    }
-    void OnDisable()
-    {
-        m_DMXData = null;
-        if (m_Listener.PortOpen) m_Listener.Close();
-    }
-    void OnInput(object sender, NewPacketEventArgs<ArtNetPacket> args)
-    {
-        if (args.Packet.OpCode == ArtNet.Enums.ArtNetOpCodes.Dmx)
-        { 
-            var dmxPacket = args.Packet as ArtNetDmxPacket;
-            if(dmxPacket.Universe == ArtNetUniverse) m_DMXData = dmxPacket.DmxData;
-        }
-    }
-    #endregion
 }
