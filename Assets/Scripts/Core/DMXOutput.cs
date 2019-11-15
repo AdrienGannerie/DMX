@@ -51,7 +51,7 @@ public class DMXOutput : MonoBehaviour
     #region Public Methods
     public void Send(byte[] dmxData)
     {
-        if(m_Sender.PortOpen)
+        if(m_Sender != null && m_Sender.PortOpen)
         {
             var artNetPacket = new ArtNetDmxPacket { Universe = ArtNetUniverse, DmxData = dmxData };
             m_Sender.Send(artNetPacket, IPAddress.Parse(RemoteIP));
