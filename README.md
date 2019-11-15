@@ -30,6 +30,10 @@ Note : *All your custom DMX output need to inherit from this component.*
 
 	A DMX device which sets Unity light color. ***(Red, Green, Blue)***
 
+* #### Generic RGBW device
+
+	A DMX device which sets Unity light color. ***(Red, Green, Blue, White)***
+
 ### Inputs
 
 * #### DMX ArtNet Input
@@ -38,7 +42,7 @@ Note : *All your custom DMX output need to inherit from this component.*
 
 ### Outputs
 
-* #### DMX Output
+* #### DMX ArtNet Output
 
 	A component which sends DMX data by ArtNet protocol.
 
