@@ -152,12 +152,12 @@ namespace ArtNet.Sockets
 
         public void Send(ArtNetPacket packet)
         {
-            Send(packet, new IPEndPoint(BroadcastAddress, Port));
+            Send(packet, BroadcastAddress);
         }
 
-        public void Send(ArtNetPacket packet, IPEndPoint remote)
+        public void Send(ArtNetPacket packet, IPAddress remoteIP)
         {
-            SendTo(packet.ToArray(), remote);
+            SendTo(packet.ToArray(), new IPEndPoint(remoteIP, Port));
         }
       
         #endregion
