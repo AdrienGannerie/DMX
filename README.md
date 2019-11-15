@@ -25,14 +25,18 @@ Note : *All your custom DMX input need to inherit from this component.*
 	An abstract Component which sends DMX data.
 Note : *All your custom DMX output need to inherit from this component.*
 
-### Custom
+### Devices
 * #### Generic RGB device
 
 	A DMX device which sets Unity light color. ***(Red, Green, Blue)***
 
+### Inputs
+
 * #### DMX ArtNet Input
 
 	A component which receives DMX data by ArtNet protocol.
+
+### Outputs
 
 * #### DMX Output
 
