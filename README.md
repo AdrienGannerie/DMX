@@ -1,12 +1,32 @@
 # DMX on Unity
 
-DMX for Unity.
+Example project that use DMX and ArtNet and demonstrate how to use it on Unity.
+
+## Components
+
+ToDo
+
+### DMX Universe
+
+ToDo
+
+### DMX Device
+
+ToDo
+
+### DMX Input
+
+ToDo
+
+### DMX Output
+
+ToDo
 
 ## Authors
 
 * **Adrien Gannerie** - *DMX on Unity* - [AdrienGannerie](https://github.com/AdrienGannerie)
 
-## External Contributor
+## External Libraries
 
 * **MikeCodesDotNET** - *ArtNet.Net* - [ArtNet.Net](https://github.com/MikeCodesDotNET/ArtNet.Net)
 
